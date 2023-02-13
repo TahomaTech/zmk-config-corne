@@ -50,8 +50,8 @@
 //                      |      |      |     |   |     |     |     |
                         bindings = <
    &kp ESC   &kp EXCL       &kp AT       &kp HASH     &kp DLLR     &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
-   &kp CLCK  &kp C_PREVIOUS &kp C_NEXT   &kp END      &kp HOME     &trans      &GRVE     &kp MINUS &kp EQUAL       &kp LBKT &kp RBKT &BSLH
-   &kp INS   &kp C_BRI_DN   &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &trans      &TILDE    &kp UNDER &kp PLUS        &kp LBRC &kp RBRC &PIPE
+   &kp CLCK  &kp C_PREVIOUS &kp C_NEXT   &kp END      &kp HOME     &trans      &kp GRVE     &kp MINUS &kp EQUAL       &kp LBKT &kp RBKT &BSLH
+   &kp INS   &kp C_BRI_DN   &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &trans      &kp TILDE    &kp UNDER &kp PLUS        &kp LBRC &kp RBRC &PIPE
                                                  &trans   &trans   &trans      &trans    &trans    &trans
                         >;
                 };
