@@ -14,7 +14,7 @@
 
 // reduce &lt hold threshold to 100ms from 200ms
 &lt {
-  tapping-term-ms = <100>;
+  tapping-term-ms = <150>;
 };
 
 / {
