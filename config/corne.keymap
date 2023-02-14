@@ -12,6 +12,11 @@
 #define LWR 1
 #define RSE 2
 
+// reduce &lt hold threshold to 100ms from 200ms
+&lt {
+  tapping-term-ms = <100>;
+};
+
 / {
         keymap {
                 compatible = "zmk,keymap";
