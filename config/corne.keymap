@@ -29,6 +29,7 @@
         &kp LGUI &kp LCTRL &lt LOWER SPACE   &lt RAISE RET &kp BSPC &kp RALT
                         >;
                 };
+
                 lower_layer {
                   label = "Lower";
 // -----------------------------------------------------------------------------------------
