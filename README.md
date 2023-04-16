@@ -1,14 +1,12 @@
 # ZMK Configuration - Corne - [![.github/workflows/build.yml](https://github.com/TahomaTech/zmk-config-corne/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/TahomaTech/zmk-config-corne/actions/workflows/build.yml)
-This is the [ZMK](https://zmk.dev/) configuration for my [Corne V3](https://github.com/foostan/crkbd) keyboard.
+
+This is the [ZMK](https://zmk.dev/) configuration for my [Corne V3](https://github.com/foostan/crkbd) keyboard. Currently using it to test going from 42 keys to 34 via the [Urchin](https://github.com/duckyb/urchin) or designing my own.
 
 ## Installation
-Installing the firmware onto a Corne requires you to connect the Corne to your PC, double click the reset button, and dragging/dropping the compiled file into the proper side.
+Installing the firmware onto a Corne requires you to download the firmware artifact from the "Actions" tab, connect the Corne to your PC, enter bootloader mode (double click the reset button or dedicated button on existing firmware), and dragging/dropping the compiled file into the proper side.
 
 ## Usage
 The firmware for the Corne is built from GitHub actions. By cloning/forking the repo and having GitHub actions run, you will have the compiled firmware for each side of the Corne. Alternatively you can download the firmware I use [here](https://github.com/TahomaTech/zmk-config-corne/actions).
-
-## Contributions
-If you notice anything that you think can be improved upon, feel free to create a PR.
 
 ## License
 This project uses the [MIT](https://choosealicense.com/licenses/mit/) license.
