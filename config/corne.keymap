@@ -4,6 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+// Author: Ryan H.
+// Filename: corne.keymap
+// Keymap settings for a 3x6 column Corne.
+// Currently setup for a 3x5 column variant and only 2 thumb keys.
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
