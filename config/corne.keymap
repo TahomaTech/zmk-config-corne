@@ -15,7 +15,13 @@
 
 #define BASE 0
 #define LOWER 1
-#define RAISE 2
+#define UPPER 2
+
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+
+&lt {
+    tapping-term-ms = <150>;
+};
 
 / {
         keymap {
