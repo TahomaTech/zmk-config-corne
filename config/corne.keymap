@@ -23,6 +23,10 @@
     tapping-term-ms = <150>;
 };
 
+&mt {
+    tapping-term-ms = <150>;
+}
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -56,10 +60,10 @@
 // |    |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |    |
 //            |     | TAB | SPC/LOWER |   | ENT/UPPER | BSPC |     |
             bindings = <
-   &none &kp Q      &kp W      &kp E       &kp R       &kp T   &kp Y &kp U       &kp I       &kp O      &kp P         &none
-   &none &hm LGUI A &hm LALT S &hm LSHFT D &hm LCTRL F &kp G   &kp H &hm RCTRL J &hm RSHFT K &hm RALT L &hm RGUI SEMI &none
-   &none &kp Z      &kp X      &kp C       &kp V       &kp B   &kp N &kp M       &kp COMMA   &kp DOT    &kp FSLH      &none
-                               &none &kp TAB &lt LOWER SPACE   &lt UPPER RET &kp BSPC &none
+   &none &kp Q      &kp W      &kp E &kp R &kp T   &kp Y &kp U &kp I     &kp O   &kp P    &none
+   &none &kp A      &kp S      &kp D &kp F &kp G   &kp H &kp J &kp K     &kp L   AS(SEMI) &none
+   &none &mt LGUI Z &mt LALT X &kp C &kp V &kp B   &kp N &kp M AS(COMMA) AS(DOT) AS(FSLH) &none
+             &none &mt LSHFT TAB &lt LOWER SPACE   &lt UPPER RET &mt LCTRL BSPC &none
                         >;
                 };
 
