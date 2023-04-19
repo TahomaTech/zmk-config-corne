@@ -67,14 +67,14 @@
             label = "Lower";
 // -----------------------------------------------------------------------------------------
 // |     | 1 ! | 2 @ | 3 # | 4 $ | 5 % |   | 6 ^  | 7 &  | 8 *  | 9 ( | 0 )  |     |
-// |     | \ | | = + | - _ | ` ~ | ' " |   | LFT  | DWN  |  UP  | RGT | CAPS |     |
-// |     |     |     |PSCRN| [ { | ] } |   | HOME | PGDN | PGUP | END | INS  |     |
+// |     | \ | | = + | - _ | ' " | ` ~ |   | LFT  | DWN  |  UP  | RGT | CAPS |     |
+// |     |PSCRN|     |  >  | [ { | ] } |   | HOME | PGDN | PGUP | END | INS  |     |
 //                   |     |     |     |   |      | DEL  |      |
             bindings = <
-   &trans AS(N1)   AS(N2)    AS(N3)    AS(N4)    AS(N5)    AS(N6)   AS(N7)    AS(N8)    AS(N9)    AS(N0)   &trans
-   &trans AS(BSLH) AS(EQUAL) AS(MINUS) AS(GRAVE) AS(SQT)   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp CAPS &trans
-   &trans &trans   &trans    &kp PSCRN AS(LBKT)  AS(RBKT)  &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp INS  &trans
-                             &trans    &trans    &trans    &trans   &kp DEL   &trans
+   &trans AS(N1)    AS(N2)    AS(N3)    AS(N4)   AS(N5)    AS(N6)   AS(N7)    AS(N8)    AS(N9)    AS(N0)   &trans
+   &trans AS(BSLH)  AS(EQUAL) AS(MINUS) AS(SQT)  AS(GRAVE) &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp CAPS &trans
+   &trans &kp PSCRN &trans    &kp GT    AS(LBKT) AS(RBKT)  &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp INS  &trans
+                              &trans    &trans   &trans    &trans   &kp DEL   &trans
                         >;
                 };
 
