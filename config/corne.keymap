@@ -97,7 +97,7 @@
 // |     |     |     |     | [ { | ] } |   |     |  >  |     |     |     |     |
 //                   |     |     |     |   |     |     |     |
             bindings = <
-   &trans &kpN1  &kpN2  &kpN3  &kpN4   &kpN5      &kpN6  &kpN7    &kpN8    &kpN9   &kpN0  &trans
+   &trans &kp N1 &kp N2 &kp N3 &kp N4  &kp N5     &kp N6 &kp N7   &kp N8   &kp N9  &kp N0  &trans
    &trans &trans &trans &trans &kpSQT  &kpGRAVE   &trans &kpMINUS &kpEQUAL &kpBSLH &trans &trans
    &trans &trans &trans &trans &kpLBKT &kpRBKT    &trans &kp GT   &trans   &trans  &trans &trans
                           &trans &trans &trans      &trans &trans &trans
