@@ -1,0 +1,8 @@
+# Getting started
+
+Here is how you can create your own ZMK keymap for the Corne.
+
+1) [Fork my repository](https://github.com/TahomaTech/zmk-config-corne/fork)
+2) Enable actions on your fork. (click on the actions tab and enable actions)
+3) Edit the `zmk-config-corne/config/corne.keymap` file to your liking. (See the [ZMK Codes reference](https://zmk.dev/docs/codes))
+4) When you push the changes an action will start that will build your firmware. If the action is successful the file will be available in it's assets. Check the [ZMK docs](https://zmk.dev/docs/user-setup#installing-the-firmware) if you need a visual guide.
