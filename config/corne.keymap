@@ -17,7 +17,7 @@
 #define BASE 0
 #define LOWER 1
 #define UPPER 2
-// #define SYSTEM 3
+#define SYSTEM 3
 
 // Macros:
 #define meh LC(LS(LALT))
@@ -32,13 +32,13 @@
 };
 
 / {
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     tri_layer {
-    //         if-layers = <LOWER UPPER>;
-    //         then-layer = <SYSTEM>;
-    //     };
-    // };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <LOWER UPPER>;
+            then-layer = <SYSTEM>;
+        };
+    };
 
     macros {
         dw: delete_word {
