@@ -91,11 +91,23 @@
 
         upper_layer {
             label = "Upper";
-// -----------------------------------------------------------------------------------------
-// |     | F1  | F2  | F3  | F4  | F5  |     | BT5  | BT4  | BT3  | BT2  | BT1  |     |
-// |BOOTL| F6  | F7  | F8  | F9  | F10 |     | PP   | VOL- | VOL+ | CAPS | INS  |BOOTL|
-// |RESET| F11 | F12 | F13 | F14 | F15 |     |      | PREV | NEXT |CAPSWD|BTCLR |RESET|
-//                   |     |     |hyper|     |      |      |      |
+            bindings = <
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//│          │  F1      │  F2      │  F3      │  F4      │  F5      │   │          │          │          │          │          │          │
+   &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &trans     &trans     &trans     &trans     &trans     &trans
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//│          │  F6      │  F7      │  F8      │  F9      │  F10     │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │          │          │
+   &trans     &kp F6     &kp F7     &kp F8     &kp F9     &kp F10        &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans     &trans
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//│          │  F11     │  F12     │  F13     │  F14     │  F15     │   │  HOME    │  PG DOWN │  PG UP   │  END     │          │          │
+   &trans     &kp F11    &kp F12    &kp F13    &kp F14    &kp F15        &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans     &trans
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                 │          │          │          │   │          │          │          │
+                                    &trans     &trans     &trans         &trans     &trans     &trans
+//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+                        >;
+                };
+
             bindings = <
    &trans      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &trans
    &bootloader &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &kp C_PP     &kp C_VOL_DN &kp C_VOL_UP &kp CAPS     &kp INS      &bootloader
