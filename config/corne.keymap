@@ -115,11 +115,11 @@
 //│          │  RESET   │          │PROFILE 0 │          │PROFILE 3 │   │          │  VOL UP  │          │          │  RESET   │          │
    &trans    &sys_reset  &none     &bt BT_SEL 0 &none    &bt BT_SEL 3    &none     &kp C_VOL_UP &none     &none      &sys_reset &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │BOOTLOADER│          │PROFILE 1 │          │PROFILE 4 │   │  PP      │  VOL DN  │          │          │BOOTLOADER│          │
-   &trans    &bootloader &none     &bt BT_SEL 1 &none    &bt BT_SEL 4    &kp C_PP  &kp C_VOL_DN &none     &none     &bootloader &trans
+//│  CAPS    │BOOTLOADER│          │PROFILE 1 │          │PROFILE 4 │   │  PP      │  VOL DN  │          │          │BOOTLOADER│          │
+   &kp CAPS   &bootloader &none     &bt BT_SEL 1 &none    &bt BT_SEL 4    &kp C_PP  &kp C_VOL_DN &none     &none     &bootloader &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │          │          │PROFILE 2 │          │ CLEAR BT │   │          │  PG DOWN │  PG UP   │          │          │          │
-   &trans     &none      &none     &bt BT_SEL 2 &none    &bt BT_CL       &none      &kp C_PREV &kp C_NEXT &none      &none      &trans
+//│  INS     │          │          │PROFILE 2 │          │ CLEAR BT │   │          │  PG DOWN │  PG UP   │          │          │          │
+   &kp INS    &none      &none     &bt BT_SEL 2 &none    &bt BT_CL       &none      &kp C_PREV &kp C_NEXT &none      &none      &trans
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
 //                                 │          │          │          │   │          │          │          │
                                     &trans     &trans     &trans         &trans     &trans     &trans
