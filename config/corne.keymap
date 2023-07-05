@@ -76,16 +76,20 @@
   
         lower_layer {
             label = "Lower";
-// -----------------------------------------------------------------------------------------
-// |     | 1 ! | 2 @ | 3 # | 4 $ | 5 % |     | 6 ^  | 7 &  | 8 *  | 9 ( | 0 ) |     |
-// |     |     | = + | - _ | ' " | ` ~ |     | LFT  | DWN  |  UP  | RGT |     |     |
-// |     |     | \ | |  >  | [ { | ] } |     | HOME | PGDN | PGUP | END |     |     |
-//                   |     |     |     |     | meh  |      |      |
             bindings = <
-   &trans &kp N1 &kp N2    &kp N3    &kp N4   &kp N5        &kp N6   &kp N7    &kp N8    &kp N9    &kp N0 &trans
-   &trans &trans &kp EQUAL &kp MINUS &kp SQT  &kp GRAVE     &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans &trans
-   &trans &trans &kp BSLH  &kp GT    &kp LBKT &kp RBKT      &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans &trans
-                            &trans    &trans   &trans    &kp meh   &trans   &trans
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//│  ESC     │  1 !     │  2 @     │  3 #     │  4 $     │  5 %     │   │  6 ^     │  7 &     │  8 *     │  9 (     │  0 )     │  DEL     │
+   &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp DEL
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//│          │          │          │          │  ' "     │  ` ~     │   │  $       │  - _     │  = +     │          │          │          │
+   &trans     &none      &none      &none      &kp SQT    &kp GRAVE      &kp DLLR   &kp MINUS  &kp EQUAL  &none      &none      &trans
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+//│          │          │          │          │  [ {     │  ] }     │   │          │   >      │  \ |     │          │          │          │
+   &trans     &none      &none      &none      &kp LBKT   &kp RBKT       &none      &kp GT     &kp BSLH   &none      &none      &trans
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                 │          │          │          │   │          │          │          │
+                                    &trans     &trans     &trans         &trans     &trans     &trans
+//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
 
