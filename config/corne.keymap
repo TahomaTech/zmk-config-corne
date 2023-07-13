@@ -34,24 +34,23 @@
     //     zmk,matrix_transform = &five_column_transform;
     // };
 
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <LOWER UPPER>;
             then-layer = <SYSTEM>;
-        };
-    };
-
-    macros {
-        dw: delete_word {
-            label = "DELETE_WORD";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp BSPC>
-                , <&macro_release &kp LCTRL>
-                ;
         };
     };
 
@@ -67,10 +66,10 @@
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │
 &none      &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI   &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │  . >     │  / ?     │
-&none      &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &none
+        //│  LGUI Z  │  LALT X  │  C       │  V       │  B       │   │  N       │  M       │ , <      │ RALT . > │ RGUI / ? │
+&none      &hm LGUI Z &hm LALT X &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &hm RALT DOT &hm RGUI FSLH &none
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                 &kp LGUI   &kp LCTRL &lt LOWER SPACE &mo UPPER  &kp RSHFT  &kp LALT
+                                 &kp meh    &kp LCTRL  &lt LOWER SPACE &mo UPPER  &kp RSHFT  &kp hyper
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
@@ -79,16 +78,16 @@
             label = "Lower";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  1 !     │  2 @     │  3 #     │  4 $     │  5 %     │   │  6 ^     │  7 &     │  8 *     │  9 (     │  0 )     │
-&none      &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &none
+        //│  ESC     │          │  PSCRN   │  TAB     │ CAPSWORD │   │          │  [ {     │  ] }     │  DEL     │  BSPC    │
+&none      &kp ESC    &none      &kp PSCRN  &kp TAB    &caps_word     &none      &kp LBKT   &kp RBKT   &kp DEL    &kp BSPC   &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  CAPS    │  ESC     │  TAB     │  ' "     │  ` ~     │   │          │  - _     │  = +     │          │          │
-&none      &kp CAPS   &kp ESC    &kp TAB    &kp SQT    &kp GRAVE      &none      &kp MINUS  &kp EQUAL  &none      &none      &none
+        //│  1 !     │  2 @     │  3 #     │  4 $     │  5 %     │   │  ' "     │  - _     │  = +     │  \ |     │          │
+&none      &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp SQT    &kp MINUS  &kp EQUAL  &kp BSLH   &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  INSERT  │          │  CAPSWORD│  [ {     │  ] }     │   │          │  >       │  \ |     │          │          │
-&none      &kp INS    &none      &caps_word &kp LBKT   &kp RBKT       &none      &kp GT     &kp BSLH   &none      &none      &none
+        //│  6 ^     │  7 &     │  8 *     │  9 (     │  0 )     │   │  ` ~     │  >       │          │          │          │
+&none      &kp N6     &kp N7     &kp N8     &kp N9     &kp N0         &kp GRAVE  &kp GT     &none      &none      &none      &none
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                 &trans     &trans     &trans        &trans     &kp hyper  &trans
+                                 &trans     &trans     &trans         &trans     &trans     &trans
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
@@ -97,8 +96,8 @@
             label = "Upper";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  DEL     │  BSPC    │  DW      │          │          │
-&none      &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp DEL    &kp BSPC   &dw        &none      &none      &none
+        //│  F1      │  F2      │  F3      │  F4      │  F5      │   │          │          │          │  DEL     │  BSPC    │
+&none      &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &none      &none      &none      &kp DEL    &kp BSPC   &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F6      │  F7      │  F8      │  F9      │  F10     │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │  RETURN  │
 &none      &kp F6     &kp F7     &kp F8     &kp F9     &kp F10        &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp RET    &none
@@ -106,7 +105,7 @@
         //│  F11     │  F12     │  F13     │  F14     │  F15     │   │  HOME    │  PG DOWN │  PG UP   │  END     │          │
 &none      &kp F11    &kp F12    &kp F13    &kp F14    &kp F15        &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none      &none
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                 &trans     &kp meh    &trans         &trans     &trans     &trans
+                                 &trans     &trans     &trans         &trans     &trans     &trans
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
