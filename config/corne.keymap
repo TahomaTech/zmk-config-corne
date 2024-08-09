@@ -20,6 +20,7 @@
 #define SYSTEM 3
 
 // Macros:
+#define ctsh LC(LS())
 #define meh LC(LS(LALT))
 #define hyper LC(LS(LA(LGUI)))
 
@@ -62,14 +63,14 @@
 //│  TAB     │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │  BCPC    │
    &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//│  LSHFT   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │  LGUI    │
-   &kp LSHFT  &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp LGUI
+//│  LSHFT   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │  ' "     │
+   &mo UPPER  &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
 //│  LCTRL   │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │  . >     │ / ?      │  LALT    │
    &kp LCTRL  &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp LALT
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 │  MEH     │  LOWER   │ SPACE    │   │  ENTER   │  UPPER   │ HYPER    │
-                                    &kp meh    &mo LOWER  &kp SPACE      &kp ENTER  &mo UPPER  &kp hyper
+//                                 │ CTRLSHFT │  LOWER   │ SPACE    │   │  ENTER   │  UPPER   │ LGUI     │
+                                    &kp ctsh   &mo LOWER  &kp SPACE      &kp ENTER  &kp LSHFT  &kp LGUI
 //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
@@ -81,11 +82,11 @@
 //│  ESC     │  1 !     │  2 @     │  3 #     │  4 $     │  5 %     │   │  6 ^     │  7 &     │  8 *     │  9 (     │  0 )     │  DEL     │
    &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp DEL
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │          │          │          │  ' "     │  ` ~     │   │  $       │  - _     │  = +     │          │          │          │
-   &trans     &none      &none      &none      &kp SQT    &kp GRAVE      &kp DLLR   &kp MINUS  &kp EQUAL  &none      &none      &trans
+//│          │          │          │  ' "     │  ` ~     │          │   │          │  - _     │  = +     │          │          │          │
+   &trans     &none      &none      &kp SQT    &kp GRAVE  &none          &none      &kp MINUS  &kp EQUAL  &none      &trans     &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-//│          │          │          │          │  [ {     │  ] }     │   │          │   >      │  \ |     │          │          │          │
-   &trans     &none      &none      &none      &kp LBKT   &kp RBKT       &none      &kp GT     &kp BSLH   &none      &none      &trans
+//│          │          │          │  [ {     │  ] }     │          │   │          │   >      │  \ |     │          │          │          │
+   &trans     &none      &none      &kp LBKT   &kp RBKT   &none          &none      &kp GT     &kp BSLH   &none      &none      &trans
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
 //                                 │          │          │          │   │          │          │          │
                                     &trans     &trans     &trans         &trans     &trans     &trans
