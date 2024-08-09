@@ -20,7 +20,7 @@
 #define SYSTEM 3
 
 // Macros:
-#define ctsh LC(LS())
+#define ctsh LC(LS)
 #define meh LC(LS(LALT))
 #define hyper LC(LS(LA(LGUI)))
 
